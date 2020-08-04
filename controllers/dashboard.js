@@ -1,29 +1,28 @@
-'use strict';
+"use strict";
 
-const logger = require('../utils/logger');
-const playlistStore = require('../models/playlist-store');
+const logger = require("../utils/logger");
+const playlistStore = require("../models/playlist-store");
+const uuid = require('uuid');
 
 const dashboard = {
   index(request, response) {
-    logger.info('dashboard rendering');
+    logger.info("dashboard rendering");
     const viewData = {
-      title: 'Playlist Dashboard',
-      playlists: playlistStore.getAllPlaylists(),
+      title: "Playlist Dashboard",
+      playlists: playlistStore.getAllPlaylists()
     };
-    logger.info('about to render', playlistStore.getAllPlaylists());
-    response.render('dashboard', viewData);
+    logger.info("about to render", playlistStore.getAllPlaylists());
+    response.render("dashboard", viewData);
   },
-  
-  
-   deleteSong(request, response) {
-    const playlistId = request.params.id;
-    const songId = request.params.songid;
-    logger.debug(`Deleting Song ${songId} from Playlist ${playlistId}`);
-    playlistStore.removeSong(playlistId, songId);
-    response.redirect('/playlist/' + playlistId);
+  addPlaylist(request, response) {
+    const newPlayList = {
+      id: uuid.v1(),
+      title: request.body.title,
+      songs: [],
+    };
+    playlistStore.addPlaylist(newPlayList);
+    response.redirect('/dashboard');
   },
 };
-
-
 
 module.exports = dashboard;
