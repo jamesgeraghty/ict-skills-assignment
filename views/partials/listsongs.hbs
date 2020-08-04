@@ -3,32 +3,27 @@
     <tr>
       <th>Song</th>
       <th>Artist</th>
-    </tr>
+      <th>Delete</th>
+      
+    </tr>    
   </thead>
   <tbody>
-  <tr>
-    <td>
-      Piano Sonata No. 3
-    </td>
-    <td>
-      Beethoven
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Piano Sonata No. 7
-    </td>
-    <td>
-      Beethoven
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Piano Sonata No. 10
-    </td>
-    <td>
-      Beethoven
-    </td>
-  </tr>
-</tbody>
+    {{#each playlist.songs}}   
+      <tr>
+        <tr>
+        <td>
+          {{title}}
+        </td>
+        <td>
+          {{artist}}
+        </td>
+        <td>
+          <a href="/playlist/{{../playlist.id}}/deletesong/{{id}}" class="ui tiny red button">Delete Song</a>
+        </td>
+      </tr> 
+    </tr> 
+    
+    {{/each}}
+    
+  </tbody>
 </table>
