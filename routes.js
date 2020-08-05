@@ -17,9 +17,11 @@ router.get('/', accounts.index);
 router.get('/login', accounts.login);
 router.get('/signup', accounts.signup);
 router.get('/logout', accounts.logout);
+router.get("/dashboard/deleteplaylist/:id", dashboard.deletePlaylist);
 
 router.post('/playlist/:id/addsong', playlist.addSong);
 router.post('/dashboard/addplaylist', dashboard.addPlaylist);
+
 router.post('/register', accounts.register);
 router.post('/authenticate', accounts.authenticate);
 
