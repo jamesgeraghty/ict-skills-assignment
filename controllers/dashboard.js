@@ -1,44 +1,52 @@
 "use strict";
 
-const accounts = require("./accounts.js");
 const logger = require("../utils/logger");
-const playlistStore = require("../models/playlist-store");
-const uuid = require('uuid');
+const assessmentStore = require("../models/assessment-store");
+const accounts = require("./accounts.js");
+const uuid = require("uuid");
+const BMI = require("../utils/bmi-calculator.js");
+const bmistatus = require("../utils/bmi-status.js");
+const memberStore = require("../models/member-store");
+const trainertore = require("../models/trainer-store");
 
 const dashboard = {
   index(request, response) {
     logger.info("dashboard rendering");
-    const loggedInUser = accounts.getCurrentUser(request);
+    const loggedInMember = accounts.getCurrentMember(request);
     const viewData = {
-      title: "Playlist Dashboard",
-      playlists: playlistStore.getUserPlaylists(loggedInUser.id)
+      assessments: assessmentStore.getMemberAssessments(loggedInMember.id),
+      member: memberStore.getMemberById(loggedInMember.id),
+      BMI: BMI.BMICalculation(loggedInMember.id),
+      bmistatus:bmistatus.bmistatus(loggedInMember.id),
     };
-    logger.info("about to render", playlistStore.getAllPlaylists());
+    logger.info("about to render", assessmentStore.getAllAssessments());
     response.render("dashboard", viewData);
   },
+
   
-  
-  addPlaylist(request, response) {
-    const loggedInUser = accounts.getCurrentUser(request);
-    const newPlayList = {
-      id: uuid.v1(),
-      userid: loggedInUser.id,
-      title: request.body.title,
-      songs: [],
+  addAssessment(request, response) {
+    const loggedInMember = accounts.getCurrentMember(request);
+    let current_datetime = new Date() // Set variable to current date and time
+    let formatted_date = current_datetime.getDate() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getFullYear() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes();
+    const newAssessment = {
+      id: uuid.v1(), 
+      memberid: loggedInMember.id,
+      entry: formatted_date,  
+      weight: request.body.weight,
+      chest: request.body.chest,
+      thigh: request.body.thigh,
+      upperArm: request.body.upperArm,
+      waist: request.body.waist,
+      hips: request.body.hips,
     };
-    logger.debug('Creating a new Playlist', newPlayList);
-    playlistStore.addPlaylist(newPlayList);
-    response.redirect('/dashboard');
+    assessmentStore.addAssessment(newAssessment);
+    response.redirect("/dashboard");
   },
   
-  
-  
-  
-  
-    deletePlaylist(request, response) {
-    const playlistId = request.params.id;
-    logger.debug(`Deleting Playlist ${playlistId}`);
-    playlistStore.removePlaylist(playlistId);
+ deleteAssessment(request, response) {
+    const assessmentId = request.params.id;
+    logger.info(`Deleting assessment ${assessmentId}`);
+    assessmentStore.removeAssessment(assessmentId);
     response.redirect("/dashboard");
   },
 };
