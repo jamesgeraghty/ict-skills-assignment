@@ -6,10 +6,11 @@ const about = {
   index(request, response) {
     logger.info("about rendering");
     const viewData = {
-      title: "About Playlist 1"
+      title: "Fitness tracker",
     };
     response.render("about", viewData);
-  }
+  },
 };
 
 module.exports = about;
+

@@ -1,0 +1,54 @@
+{
+  "members": [
+    {
+      "name": "James Geraghty",
+      "gender": "",
+      "email": "jamesgeraghty@live.ie",
+      "password": "123",
+      "address": "kilheffernan",
+      "height": "1.5",
+      "startingweight": "85",
+      "id": "b8d7a3a0-e3bf-11ea-bf75-59d3bba419b7"
+    },
+    {
+      "name": "john Quinn",
+      "gender": "1",
+      "email": "john@guinn.com",
+      "password": "john",
+      "address": "Clonmel",
+      "height": "1.4",
+      "weight": "85",
+      "id": "83af3dd0-e3e4-11ea-aff9-1b672fb78210"
+    },
+    {
+      "name": "Paul Ryan ",
+      "gender": "",
+      "email": "paul@ryan.com",
+      "password": "123",
+      "address": "Kilheffernan",
+      "height": "1.9",
+      "weight": "87",
+      "id": "75b449a0-e48e-11ea-bf72-1db0a9b05161"
+    },
+    {
+      "name": "john",
+      "gender": "",
+      "email": "John@gmail.com",
+      "password": "123",
+      "address": "",
+      "height": "1.5",
+      "weight": "78",
+      "id": "e3cd7a60-e4b1-11ea-9868-0f6c28bfd19d"
+    },
+    {
+      "name": "Michael Geraghty",
+      "gender": "1",
+      "email": "michael@geraghty.com",
+      "password": "123",
+      "address": "Home",
+      "height": "1.9",
+      "weight": "78",
+      "id": "071cffa0-e565-11ea-a54b-1f12e5e259d0"
+    }
+  ]
+}

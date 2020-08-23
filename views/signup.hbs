@@ -1,24 +1,65 @@
 {{> welcomemenu id="signup"}}
 
-<form class="ui stacked segment form" action="/register" method="POST">
-  <h3 class="ui header">Register</h3>
-  <div class="two fields">
-    <div class="field">
-      <label>First Name</label>
-      <input placeholder="First Name" type="text"  name="firstName">
-    </div>
-    <div class="field">
-      <label>Last Name</label>
-      <input placeholder="Last Name" type="text"  name="lastName">
-    </div>
+<div class="ui two column grid basic middle aligned segment">
+  <div class="column">
+    <form class="ui stacked segment form" action="/register" method="POST">
+      <h1 class="ui blue header">Register</h1>
+      <div class="two fields">
+        
+        <div class="field required">
+          <label>Name</label>
+          <input placeholder="Name" type="text"  name="name">
+        </div>
+        <div class="field">
+          <label>Gender</label>
+          <div class="ui selection dropdown">
+            <input type="hidden" name="gender">
+            <i class="dropdown icon"></i>
+            <div class="default text">Gender</div>
+            <div class="menu">
+              <div class="item" data-value="2">Unspecified</div>
+              <div class="item" data-value="1">Male</div>
+              <div class="item" data-value="0">Female</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="field required">
+         <label>Email</label>
+          <div class="ui left icon input">
+              <input placeholder="Email" name="email">
+          </div>
+      </div>
+      <div class="field required">
+        <label>Password</label>
+          <div class="ui left icon input">
+              <input type="password"  name="password">
+          </div>
+      </div>
+      <div class="field">
+        <label>Address</label>
+        <div class="ui left icon input">
+          <input type="text" name="address">
+        </div>
+      </div>
+      <div class="two fields">
+        <div class="field">
+          <label>Height</label>
+          <input type="number" placeholder="Height (cm)" step="0.1"  min="0" max="250"name="height">
+        </div>
+        <div class="field">
+          <label>Starting Weight</label>
+          <input type="number" placeholder="weight (kg)" step="1"  min="0" max="250"name="weight">
+        </div>
+      </div>
+      <div class="ui success message">
+        <div class="header">Form Completed</div>
+        <p>You're account has been setup.</p>
+      </div>
+      <button class="ui blue submit button">Submit</button>
+    </form>
   </div>
-  <div class="field">
-    <label>Email</label>
-    <input placeholder="Email" type="text" name="email">
+  <div class="column">
+    <img class="ui image" src="https://cdn.glitch.com/8fe88056-95cf-41a7-b264-3253cbb98167%2Fabout.jpg?v=1595066738947">
   </div>
-  <div class="field">
-    <label>Password</label>
-    <input type="password" name="password">
-  </div>
-  <button class="ui blue submit button">Submit</button>
-</form>
+</div>

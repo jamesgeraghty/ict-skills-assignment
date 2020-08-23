@@ -1,12 +1,22 @@
 <nav class="ui menu">
-  <header class="ui header item"> <a href="/"> Playlist 4 </a></header>
+  <header class="ui header item"> Glitch Gym </header>
   <div class="right menu">
     <a id="dashboard" class="item" href="/dashboard"> Dashboard  </a>
     <a id="about" class="item" href="/about"> About </a>
-    <a id="logout" class="item" href="/logout"> Logout </a>
+    <div class="right menu">
+      <div class="ui dropdown item">
+        <i class="user icon"></i>
+        <div class="menu">
+          <a class="item" href="/settings">Settings</a>
+           <a id="settings" class="item" href="/settings/{{id}}"><i class="large cogs icon"></i></a>
+          <a class="item" href="/logout">Logout</a>
+        </div>
+      </div>
+    </div>
   </div>
 </nav>
 
 <script>
   $("#{{id}}").addClass("active item");
+  $('.ui.dropdown').dropdown();
 </script>
