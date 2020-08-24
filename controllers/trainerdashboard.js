@@ -16,7 +16,7 @@ const trainerdashboard = {
     logger.info("Trainer dashboard rendering");
     const loggedInTrainer = accounts.getCurrentTrainer(request);
     const viewData = {
-       member: memberStore.getAllMembers(),
+       members: memberStore.getAllMembers(),
        trainer: trainerStore.getTrainerById(loggedInTrainer.id),
     };
     logger.info("about to render", assessmentStore.getAllAssessments());
@@ -83,7 +83,7 @@ const trainerdashboard = {
       comment: request.body.comment
     };
     logger.debug("Inputting a new comment", newComment.comment);
-    logger.info(`Inputting a new comment on assessment (${assessmentId}) of ${member}. The comment is: ${newComment.comment}`);
+    logger.info(`Inputting a new comment on assessment (${assessmentId}) of ${memberId}. The comment is: ${newComment.comment}`);
     assessmentStore.addComment(assessmentId, newComment.comment);
     response.redirect("/trainerassessments");
   },

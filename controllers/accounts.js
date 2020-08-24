@@ -33,6 +33,12 @@ const accounts = {
     };
     response.render('signup', viewData);
   },
+  settings(request, response) {
+    const viewData = {
+      title: "Settings"
+    };
+    response.render("settings", viewData);
+  },
 
   register(request, response) {
     const member = request.body;
