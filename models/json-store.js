@@ -62,8 +62,6 @@ class JsonStore {
       .filter(filter)
       .value();
   }
-  
-  
   update(collection, filter, obj) {
     let update = this.db
       .get(collection)
@@ -71,6 +69,7 @@ class JsonStore {
       .value();
       update = obj;
   }
+  
 }
 
 module.exports = JsonStore;
