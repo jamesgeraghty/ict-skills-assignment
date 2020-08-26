@@ -46,6 +46,17 @@ const memberStore = {
     return this.store.findOneBy(this.collection, {id: id});
   },
   
+  
+  
+    updateMember(member,updatedMember){
+      member.name=updatedMember.name;
+      member.gender=updatedMember.gender;
+      member.email=updatedMember.email;
+      member.password=updatedMember.password;
+      member.address=updatedMember.address;
+    
+    this.store.save();
+  },
 };
 
 module.exports = memberStore;

@@ -7,8 +7,9 @@ const logger = require('../utils/logger');
 const uuid = require('uuid');
 
 const accounts = {
-  
+
   index(request, response) {
+    const memberId = request.params.id;
     const viewData = {
       title: 'Login or Signup',
     };
@@ -33,11 +34,38 @@ const accounts = {
     };
     response.render('signup', viewData);
   },
+  
+  
   settings(request, response) {
+    const loggedInMember = accounts.getCurrentMember(request);
+    const memberId = request.params.id;
     const viewData = {
-      title: "Settings"
+      
+      member: memberstore.getMemberById(loggedInMember.id)
+
     };
     response.render("settings", viewData);
+  },
+       
+  updateMember(request, response) {
+    const memberId = request.params.memberid;
+    const loggedInMember = memberstore.getMemberById(memberId);
+    const newMember = {
+      id: uuid.v1(), 
+
+      name: request.body.name,
+      gender: request.body.gender,
+      email: request.body.email,
+      password: request.body.password,
+      address: request.body.address,
+     };
+    
+    logger.debug("Updating existing member", loggedInMember);
+
+    memberstore.updateMember(loggedInMember, newMember);
+
+    response.redirect("/dashboard/");
+  
   },
 
   register(request, response) {

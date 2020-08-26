@@ -1,4 +1,5 @@
- <tr>
+
+<tr>
    <td>
         {{entry}}
     </td>
@@ -20,6 +21,13 @@
     <td>
         {{hips}}
     </td>
+   <td>
+        {{#if trend}}
+        <a class="ui teal tag label"></a>
+        {{else}}
+        <a class="ui red tag label"></a>
+        {{/if}}
+      </td>
    <td>
         {{comment}}
     </td>
