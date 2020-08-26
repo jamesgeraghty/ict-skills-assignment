@@ -5,8 +5,8 @@
     <img class="ui image" src="https://cdn.glitch.com/8fe88056-95cf-41a7-b264-3253cbb98167%2Fabout.jpg?v=1595066738947">
   </div>
   <div class="column">
-        <form class="ui stacked segment form" action="/accounts/updatesettings/{{member.id}}" method="POST">
-      <h1 class="ui orange header">Edit Profile</h1>
+        <form class="ui stacked segment form" action="/accounts/updatemember/{{member.id}}" method="POST">
+      <h1 class="ui green header">Edit Details</h1>
       <div class="two fields">
         <div class="field">
           <label>Name</label>
@@ -50,10 +50,6 @@
           <label>Starting Weight</label>
           <input type="number" placeholder="weight (kg)" step="0.1"  min="0" max="250"name="startingweight" value ={{member.weight}}>
         </div>
-      </div>
-      <div class="ui success message">
-        <div class="header">Form Completed</div>
-        <p>You're account has been Updated.</p>
       </div>
       <button class="ui blue submit button">Submit</button>
     </form>
