@@ -38,6 +38,7 @@ const trainerdashboard = {
       upperArm: request.body.upperArm,
       waist: request.body.waist,
       hips: request.body.hips,
+      comment:undefined,
     };
     assessmentStore.addAssessment(newAssessment);
     response.redirect("/dashboard");
@@ -47,7 +48,7 @@ const trainerdashboard = {
     const assessmentId = request.params.id;
     logger.info(`Deleting assessment ${assessmentId}`);
     assessmentStore.removeAssessment(assessmentId);
-    response.redirect("/dashboard");
+    response.redirect("/trainerdashboard");
   },
   
   trainerAssessments(request, response){
@@ -69,22 +70,23 @@ const trainerdashboard = {
     logger.debug(`Deleting member ${memberId}`);
     logger.info(`Deleting member ${memberName}`);
     memberStore.removeMember(memberId);
-    assessmentStore.removeAssessment(memberId);
+    assessmentStore.removeAllAssessmentsByMember(memberId);
     response.redirect("/trainerdashboard");
   },
   
   addComment(request, response){
-    const assessmentId = request.params.id;
-    const memberId = request.params.memberid;
-    const member = memberStore.getMemberById(memberId).name;
+    const memberId = request.params.id;
+    const assessmentId = request.params.assessmentid;
+    
+    const member = memberStore.getMemberById(memberId);
+    
     const newComment = {
-      id: assessmentId,
-      member: memberStore.getMemberByAssessmentId(assessmentId),
-      comment: request.body.comment
+   
+      comment: request.body.comment,
     };
     logger.debug("Inputting a new comment", newComment.comment);
     logger.info(`Inputting a new comment on assessment (${assessmentId}) of ${memberId}. The comment is: ${newComment.comment}`);
-    assessmentStore.addComment(assessmentId, newComment.comment);
+    assessmentStore.addComment(memberId, assessmentId, newComment);
     response.redirect("/trainerassessments");
   },
 };

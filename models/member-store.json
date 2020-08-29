@@ -1,24 +1,14 @@
 {
   "members": [
     {
-      "name": "James Geraghty",
-      "gender": "Female",
+      "name": "Dave",
+      "gender": "",
       "email": "jamesgeraghty@live.ie",
       "password": "123",
-      "address": "Kilheffernan",
-      "height": "1.9",
-      "weight": "90",
-      "id": "819bbb70-e576-11ea-a98f-07341877a402"
-    },
-    {
-      "name": "philip ",
-      "gender": "",
-      "email": "jp@123.ie",
-      "password": "123",
       "address": "",
-      "height": "45",
-      "weight": "98",
-      "id": "2c8bba80-e70c-11ea-96ab-51e27fd9b854"
+      "height": "1.5",
+      "weight": "85",
+      "id": "d53ff8c0-e901-11ea-8802-c5d93f6a0b37"
     }
   ]
 }

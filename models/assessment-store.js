@@ -22,12 +22,10 @@ const assessmentStore = {
     this.store.save();
   },
   
-   addComment(id, comment) {
-    const assessment = this.getAssessment(id);
-    assessment.comment = comment;
+   addComment(id,assessmentId, newComment) {
+    const assessment = this.getAssessment(id, assessmentId);
+       assessment.comment = newComment.comment;
     this.store.update(this.collection, id, assessment);
-    //assessment.feedback = comment;
-    //this.store.add(this.collection, assessment);
     this.store.save();
   },
   
