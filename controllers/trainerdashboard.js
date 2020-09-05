@@ -87,7 +87,7 @@ const trainerdashboard = {
     logger.debug("Inputting a new comment", newComment.comment);
     logger.info(`Inputting a new comment on assessment (${assessmentId}) of ${memberId}. The comment is: ${newComment.comment}`);
     assessmentStore.addComment(memberId, assessmentId, newComment);
-    response.redirect("/trainerassessments");
+    response.redirect("/trainerassessments/");
   },
 };
 

@@ -1,3 +1,5 @@
+// the assessment- store finds specific elements of the collection. Fiding member, add comments to assessments. delete assessments 
+// removing all assessments of a member
 "use strict";
 
 const _ = require("lodash");

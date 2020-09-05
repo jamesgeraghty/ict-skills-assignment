@@ -10,7 +10,7 @@ const bmiCalculator= {
     const member = memberStore.getMemberById(id);
     const assessments = assessmentStore.getMemberAssessments(id);
     if(assessments.length===0) {
-      return (Math.floor (member.weight / (member.height** 2))/100);
+      return (Math.floor (member.weight / (member.height** 2)));
     }
     else{
       let bmiNumber = assessments[assessments.length-1].weight / (member.height** 2);

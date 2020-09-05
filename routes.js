@@ -31,7 +31,7 @@ router.post("/trainerdashboard/:memberid/addcomment/:id", trainerdashboard.addCo
 router.get('/trainerdashboard/deletemember/:id', trainerdashboard.deleteMember);
 router.post("/accounts/updatemember/:memberid", accounts.updateMember);
 
-
+ // a request comesintot eh router,then the router finds a match, this then triggers the controller. This is then responsiblr for assembling the view and sending it back 
 
 
 module.exports = router;
