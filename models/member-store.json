@@ -1,24 +1,44 @@
 {
   "members": [
     {
+      "name": "Bart Simpson",
+      "gender": "",
+      "email": "bart@simpson.com",
+      "password": "secret",
+      "address": "24",
+      "height": "1.7",
+      "weight": "80",
+      "id": "d6bcf1b0-eaf7-11ea-8a9c-c32c3c31f728"
+    },
+    {
+      "name": "Richy Caplice ",
+      "gender": "",
+      "email": "richy@caplice.com",
+      "password": "123",
+      "address": "Kilcash",
+      "height": "1.9",
+      "weight": "87",
+      "id": "f3abe460-ecf6-11ea-b695-255277097048"
+    },
+    {
+      "name": "Amy Johnson ",
+      "gender": "0",
+      "email": "amy@johnson.com",
+      "password": "123",
+      "address": "",
+      "height": "1.3",
+      "weight": "70",
+      "id": "f9e9a2a0-ef4d-11ea-a9ec-efefeb884600"
+    },
+    {
       "name": "James Geraghty",
-      "gender": "Female",
+      "gender": "",
       "email": "jamesgeraghty@live.ie",
       "password": "123",
       "address": "Kilheffernan",
-      "height": "1.9",
-      "weight": "90",
-      "id": "819bbb70-e576-11ea-a98f-07341877a402"
-    },
-    {
-      "name": "philip ",
-      "gender": "",
-      "email": "jp@123.ie",
-      "password": "123",
-      "address": "",
-      "height": "45",
-      "weight": "98",
-      "id": "2c8bba80-e70c-11ea-96ab-51e27fd9b854"
+      "height": "1.5",
+      "weight": "78",
+      "id": "f2f758e0-ef50-11ea-92f9-0990e62daaa9"
     }
   ]
 }

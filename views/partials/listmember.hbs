@@ -3,9 +3,7 @@
     <div class = "ui segment">
   <h2 class="ui header">
       {{name}}
-      
     </h2>
-    
    <p> Number of Assessments: {{assessment.size}} </p>
     <a href="/trainerdashboard/trainerAssessments/{{id}}" class="ui icon button">
       <i class="icon folder open"></i>
@@ -15,3 +13,10 @@
     </a>
   </section>
 {{/each}}
+    
+    <!--      This route is sent to the router. It sis dynamic depending on what link is pressed in the trainer dashboard. The controller is then checked and the contoller
+      method is then invoked. The router is router.get('/trainerdashboard/trainerassessments/:id', trainerdashboard.trainerAssessments);  and this trigers the trainerAssessments 
+method in the trainerDashboard controller. The "id" is used to fetch the specifci member from the assessment-store.json.  We are  lookign for a specific member with assessment 
+ from the json model. the getMemberAssessments(memberId). when this memberId is recovered it is then sent to the viewdata object in turn this is sent to the 
+ template engine it is combined with the the trainerAssessments template-->
+      

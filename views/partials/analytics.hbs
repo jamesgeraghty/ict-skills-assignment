@@ -1,3 +1,6 @@
+<!-- Handlebar expression is used to substitue each field in the template content . the fields are extracted from 
+ the date object-->
+
 <section class="ui segment">
   <div class="ui four small statistics">
     <div class="ui orange statistic">
@@ -5,14 +8,19 @@
         <i class="user outline icon"></i>
       </div>
       <div class="label">
+        
         {{member.name}}
       </div>
     </div>
     <div class="ui blue statistic">
       <div class="value">
-      <i class="weight icon"></i>
-      </div>
-      <div class="label">
+         {{#if idealBodyWeight}}
+      <i class="weight green icon"></i>      
+         {{else}}
+        <i class="weight red icon"></i>
+        {{/if}}
+         </div>
+        <div class="label">
         Ideal Weight Indicator
       </div>
     </div>
@@ -21,6 +29,8 @@
         <i class="heart icon"></i>
       </div>
       <div class="label">
+        
+<!--         this will be replaced with the view data object in the dashboard  -->
         {{BMI}}
       </div>
     </div>
