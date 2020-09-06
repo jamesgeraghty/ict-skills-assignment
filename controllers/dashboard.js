@@ -1,5 +1,5 @@
 "use strict"; // turns on strict mode, disply errors earlier
-
+// require indentes and imports object defined in other modules
 const logger = require("../utils/logger"); //requires the util logger
 const assessmentStore = require("../models/assessment-store");
 const accounts = require("./accounts.js");
@@ -79,4 +79,4 @@ const dashboard = { // dashboard object
   },
 };
 
-module.exports = dashboard; // export the dashboard object, 
+module.exports = dashboard; // exports the dashboard object, 

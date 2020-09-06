@@ -39,6 +39,16 @@
       "height": "1.5",
       "weight": "78",
       "id": "f2f758e0-ef50-11ea-92f9-0990e62daaa9"
+    },
+    {
+      "name": "Mike Whelen",
+      "gender": "0",
+      "email": "mike@whelan.com",
+      "password": "123",
+      "address": "Kilheffernan",
+      "height": "2.6",
+      "weight": "78",
+      "id": "5fff3710-f02c-11ea-9df1-81c21191bbb8"
     }
   ]
 }
