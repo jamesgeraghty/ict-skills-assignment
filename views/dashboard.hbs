@@ -1,17 +1,14 @@
 {{> menu id="dashboard"}}
-
 <section class="ui center aligned middle aligned segment">
   <h2 class="ui header">
 <!--     //outputs the name of the member -->
     {{member.name}} 
-    
   </h2>
-  
-  <!-- each of the partial listed below will be render in the dashboard -->
-  
-  
     {{> analytics}}
+  
     {{> assessment-table}}
     {{> addassessment}}
+  
 </section>
-
+<!-- each of the partial listed below will be render in the dashboard 
+  the dashboard view is made up of the mainlyout, 3 partials and a main view -->

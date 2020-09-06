@@ -52,5 +52,5 @@ const assessmentStore = {
     this.store.save();
   }
 };
-
+// module.export makes the listed object available to their modules
 module.exports = assessmentStore;
